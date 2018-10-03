@@ -7,13 +7,13 @@ It may help to have to have basic undestandig of Computer information.
    - What is it
    - History
    - pep
- * [Setting up](#Setting up)
+ * [Setting up](#Setting-up)
    - Getting Python
    - Installing Python
    - Enviroment 
    - pip
    - mongoose and Basilisk
- * Basic Syntax
+ * [Basic Syntax](#Basic-Syntax)
    - Interactive mode Programing
    - Reserverd Words
    - Lines and Indentation
@@ -24,7 +24,8 @@ It may help to have to have basic undestandig of Computer information.
  * Basic Operators 
    - Types of Operator
    - how to use it.
-   - 
+   - decison making
+   - loops
  
 
 ## Overview
@@ -41,7 +42,7 @@ Python is Object-Oriented − Python supports Object-Oriented style or technique
 Python is a Beginner's Language − Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.
 
 ### History
-Python was conceived in the late 1980s, and its implementation began in December 1989 by [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum#/media/File:Guido_van_Rossum_OSCON_2006.jpg)
+Python was conceived in the late 1980s, and its implementation began in December 1989 by Guido van Rossum ![Guido van Rossum](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Guido_van_Rossum_OSCON_2006.jpg/400px-Guido_van_Rossum_OSCON_2006.jpg)
 
 Python 2.0 was released on 16 October 2000 and had many major new features, including a cycle-detecting garbage collector and support for Unicode. With this release, the development process became more transparent and community-backed. and it has an end of life [2020](https://pythonclock.org/)
 
@@ -98,6 +99,105 @@ how to install it? using pip! of course!
 
 ```pip install --extra-index-url https://test.pypi.org/simple/ --upgrade mongoose```
 
+## Basic Syntax
+
+### Interactive Mode Programming
+to open the interactive mode of python
+open a terminal, and just write `python`
+```python
+python3
+Python 3.6.4 (default, Jan  7 2018, 15:53:53)
+[GCC 6.4.0] on cygwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+#### Hello world n19848
+write in the python terminal
+```python
+print ("Hello, Python!")
+```
+and it will  print 
+```
+Hello, Python!
+```
+now lets create a file with the same information and run it as
+```bash
+python <filename>
+```
 
 
+#### RESERVERD WORDS
+there are word you cant use
 
+![ reserverd words](https://cdn-images-1.medium.com/max/1200/1*TjYrRbTtdGArQwBywBJHgg.png)
+
+indentation lines
+``` python
+#!/usr/bin/python3
+
+import sys
+
+try:
+   # open file stream
+   file = open(file_name, "w")
+
+except IOError:
+   print ("There was an error writing to", file_name)
+   sys.exit()
+print ("Enter '", file_finish,)
+print "' When finished"
+
+while file_text != file_finish:
+   file_text = raw_input("Enter text: ")
+   
+   if file_text == file_finish:
+      # close the file
+	  file.close
+      break
+   file.write(file_text)
+   file.write("\n")
+file.close()
+file_name = input("Enter filename: ")
+
+if len(file_name) == 0:
+   print ("Next time please enter something")
+   sys.exit()
+
+try:
+   file = open(file_name, "r")
+
+except IOError:
+   print ("There was an error reading file")
+   sys.exit()
+file_text = file.read()
+file.close()
+print (file_text)
+```
+#### comments!
+
+#!/usr/bin/python3
+
+# First comment
+```python
+print ("Hello, Python!") # second comment
+This produces the following result −
+```
+```
+Hello, Python!
+```
+You can type a comment on the same line after a statement or expression −
+```python
+name = "Madisetti" # This is again comment
+```
+Python does not have multiple-line commenting feature. You have to comment each line individually as follows −
+```python
+# This is a comment.
+# This is a comment, too.
+# This is a comment, too.
+# I said that already.
+```
+one line multiple statements
+```
+import sys; x = 'foo'; sys.stdout.write(x + '\n')
+```
