@@ -3,17 +3,17 @@
 This tutorial is designed for anybody to get the bases for use learn python programming lenguage from scratch.
 It may help to have to have basic undestandig of Computer information.
 ## Python topics
- * [Overview](#Overview)
+ * [Overview](#overview)
    - What is it
    - History
    - pep
- * [Setting up](#Setting-up)
+ * [Setting up](#setting-up)
    - Getting Python
    - Installing Python
    - Enviroment 
    - pip
    - mongoose and Basilisk
- * [Basic Syntax](#Basic-Syntax)
+ * [Basic Syntax](#basic-Syntax)
    - Interactive mode Programing
    - Reserverd Words
    - Lines and Indentation
