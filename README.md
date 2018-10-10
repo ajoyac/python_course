@@ -13,15 +13,15 @@ It may help to have to have basic undestandig of Computer information.
    - Enviroment 
    - pip
    - mongoose and Basilisk
- * [Basic Syntax](#basic-Syntax)
+ * [Basic Syntax](#basic-syntax)
    - Interactive mode Programing
    - Reserverd Words
    - Lines and Indentation
    - Comments in python
- * Variables types
-  -  Assign Values to Variables
-  -  Standard Data Types
- * Basic Operators 
+ * [Variables types](#variable-types)
+   - Assign Values to Variables
+   - Standard Data Types
+ * [Basic Operators](#basic-operators)
    - Types of Operator
    - how to use it.
    - decison making
@@ -59,9 +59,10 @@ Some of the peps to check are:
 ## Setting up
 Python is multi platform. it can be found: multiple unix/linux OS
 
+### Windows
  if you don't have it already go to: [https://www.python.org/](https://www.python.org/)
  for windows there is a msi version 
- 
+### linux 
  for linux you might already have it or check your pkg manager it might be something like this(or even you already have it)
  
  `sudo apt install python3`
@@ -71,9 +72,22 @@ Python is multi platform. it can be found: multiple unix/linux OS
  `yum install python3`
  
  `pacman install python3`
- 
+ ### Mac
  for macos check home brew
  `brew install python`
+ 
+ the full steps can be fount at [here](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-macos)
+ But if you are like me TL;DR;
+ open terminal 
+ ```
+ xcode-select -p
+ xcode-select --install
+ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ echo "export PATH=/usr/local/bin:$PATH"  >> ~/.bash_profile
+ source ~/.bash_profile
+ brew doctor	
+ brew install python3
+ ```
  
  for ios: there is an [app](http://omz-software.com/pythonista/) for that 
  
@@ -100,6 +114,9 @@ how to install it? using pip! of course!
 ```pip install --extra-index-url https://test.pypi.org/simple/ --upgrade mongoose```
 
 ## Basic Syntax
+
+The first we talk about how the code have to look, but there is something to check.
+
 
 ### Interactive Mode Programming
 to open the interactive mode of python
@@ -128,10 +145,10 @@ python <filename>
 
 
 #### RESERVERD WORDS
-there are word you cant use
+there are word you cant use, I always recomend read the documentation
 
 ![ reserverd words](https://cdn-images-1.medium.com/max/1200/1*TjYrRbTtdGArQwBywBJHgg.png)
-
+It can be found at here(https://docs.python.org/3/library/functions.html#built-in-funcs)
 indentation lines
 ``` python
 #!/usr/bin/python3
@@ -176,10 +193,17 @@ print (file_text)
 ```
 #### comments!
 
-#!/usr/bin/python3
+You can let comments on your code. this will permit to left some notes or documentation on the code you wrote
+ you might want to explain somehtin  sinces it will happend something 
+ 
+ a) left unseen a code along time
+ b) some one else required to read your code
+ 
+``` python
 
+#!/usr/bin/python3
 # First comment
-```python
+
 print ("Hello, Python!") # second comment
 This produces the following result −
 ```
@@ -201,3 +225,415 @@ one line multiple statements
 ```
 import sys; x = 'foo'; sys.stdout.write(x + '\n')
 ```
+
+# Variables types
+## Assigning Values to Variables
+Python variables do not need explicit declaration to reserve memory space. The declaration happens automatically when you assign a value to a variable. The equal sign (=) is used to assign values to variables.
+
+``` python 
+counter = 100          # An integer assignment
+miles   = 1000.0       # A floating point
+name    = "John"       # A string
+
+print (counter)
+print (miles)
+print (name)
+```
+
+Here, 100, 1000.0 and "John" are the values assigned to counter, miles, and name variables, respectively. This produces the following result −
+```
+100
+1000.0
+John
+```
+### Multiple Assigment
+
+Python allows you to assign a single value to several variables simultaneously.
+
+``` python
+a, b, c = 1, 2, "john"
+```
+Here, two integer objects with values 1 and 2 are assigned to the variables a and b respectively, and one string object with the value "john" is assigned to the variable c.
+
+## Standard Data Types
+ - Numbers
+ - String
+ - List
+ - Tuple
+ - Dictionary
+### Python Numbers
+Number data types store numeric values, supports:
+ - int (signed integers)
+ - float (floating point real values)
+ - complex (complex numbers)
+ 
+### Strings 
+Strings in Python are identified as a contiguous set of characters represented in the quotation marks. Python allows either pair of single or double quotes. Subsets of strings can be taken using the slice operator ([ ] and [:] ) with indexes starting at 0 in the beginning of the string and working their way from -1 to the end.
+
+The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator. For example −
+``` python
+tr = 'Hello World!'
+
+print (str)          # Prints complete string
+print (str[0])       # Prints first character of the string
+print (str[2:5])     # Prints characters starting from 3rd to 5th
+print (str[2:])      # Prints string starting from 3rd character
+print (str * 2)      # Prints string two times
+print (str + "TEST") # Prints concatenated string
+```
+
+This will oputput:
+
+```
+Hello World!
+H
+llo
+llo World!
+Hello World!Hello World!
+Hello World!TEST
+```
+
+### Lists
+Lists are the most versatile of Python's compound data types. A list contains items separated by commas and enclosed within square brackets ([]). To some extent, lists are similar to arrays in C. One of the differences between them is that all the items belonging to a list can be of different data type.
+
+The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0 in the beginning of the list and working their way to end -1. The plus (+) sign is the list concatenation operator, and the asterisk (*) is the repetition operator.
+``` python
+list1 = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+tinylist = [123, 'john']
+
+print (list1)          # Prints complete list
+print (list1[0])       # Prints first element of the list
+print (list1[1:3])     # Prints elements starting from 2nd till 3rd 
+print (list1[2:])      # Prints elements starting from 3rd element
+print (tinylist * 2)  # Prints list two times
+print (list1 + tinylist) # Prints concatenated lists
+```
+It produces:
+
+```
+['abcd', 786, 2.23, 'john', 70.200000000000003]
+abcd
+[786, 2.23]
+[2.23, 'john', 70.200000000000003]
+[123, 'john', 123, 'john']
+['abcd', 786, 2.23, 'john', 70.200000000000003, 123, 'john']
+```
+
+### tuple 
+It like a  a list but it is only read only so in the case:
+
+```python
+tuple = ( 'abcd', 786 , 2.23, 'john', 70.2  )
+list = [ 'abcd', 786 , 2.23, 'john', 70.2  ]
+tuple[2] = 1000    # Invalid syntax with tuple
+list[2] = 1000     # Valid syntax with list
+```
+it wil generate an error
+
+### Python Dictionary
+Python's dictionaries are kind of hash-table type it work as consist of key-value pairs,
+A dictionary key can be almost any Python type, but are usually numbers or strings. Values, on the other hand, can be any arbitrary Python object.(It requires to be a something hasshable**)
+
+Dictionaries are enclosed by curly braces ({ }) and values can be assigned and accessed using square braces ([]).
+
+```python 
+dict = {}
+dict['one'] = "This is one"
+dict[2]     = "This is two"
+
+tinydict = {'name': 'john','code':6734, 'dept': 'sales'}
+
+print (dict['one'])       # Prints value for 'one' key
+print (dict[2])           # Prints value for 2 key
+print (tinydict)          # Prints complete dictionary
+print (tinydict.keys())   # Prints all the keys
+print (tinydict.values()) # Prints all the values
+```
+
+result:
+
+```
+This is one
+This is two
+{'name': 'john', 'dept': 'sales', 'code': 6734}
+dict_keys(['name', 'dept', 'code'])
+dict_values(['john', 'sales', 6734])
+```
+
+### Data type conversions
+
+Sometimes, you may need to perform conversions between the built-in types. To convert between types, you simply use the type-names as a function.
+
+There are several built-in functions to perform conversion from one data type to another. These functions return a new object representing the converted value. 
+(look the built-in functions above for review)
+
+some examples:
+
+``` python
+
+a = int("101010',2)
+a = int("1A',16)
+a = int("123'10)
+a = int(99.99)
+a = set([1,2,3,4])
+b = tuple(a)
+at = chr(64)
+another_a = ord("a")
+binstr = bin("10")  
+```
+
+## Basic Operators
+
+### number operations 
+
+```python
+a = 21
+b = 10
+c = 0
+
+c = a + b
+print ("Line 1 - Value of c is ", c)
+
+c = a - b
+print ("Line 2 - Value of c is ", c )
+
+c = a * b
+print ("Line 3 - Value of c is ", c)
+
+c = a / b
+print ("Line 4 - Value of c is ", c )
+
+c = a % b
+print ("Line 5 - Value of c is ", c)
+
+a = 2
+b = 3
+c = a**b 
+print ("Line 6 - Value of c is ", c)
+
+a = 10
+b = 5
+c = a//b 
+print ("Line 7 - Value of c is ", c)
+```
+
+### comparations operations.
+``` python
+a = 21
+b = 10
+
+if ( a == b ):
+   print ("Line 1 - a is equal to b")
+else:
+   print ("Line 1 - a is not equal to b")
+
+if ( a != b ):
+   print ("Line 2 - a is not equal to b")
+else:
+   print ("Line 2 - a is equal to b")
+
+if ( a < b ):
+   print ("Line 3 - a is less than b" )
+else:
+   print ("Line 3 - a is not less than b")
+
+if ( a > b ):
+   print ("Line 4 - a is greater than b")
+else:
+   print ("Line 4 - a is not greater than b")
+
+a,b = b,a #values of a and b swapped. a becomes 10, b becomes 21
+
+if ( a <= b ):
+   print ("Line 5 - a is either less than or equal to  b")
+else:
+   print ("Line 5 - a is neither less than nor equal to  b")
+
+if ( b >= a ):
+   print ("Line 6 - b is either greater than  or equal to b")
+else:
+   print ("Line 6 - b is neither greater than  nor equal to b")
+```
+
+### Assigment operations
+
+```
+!/usr/bin/python3
+
+a = 21
+b = 10
+c = 0
+
+c = a + b
+print ("Line 1 - Value of c is ", c)
+
+c += a
+print ("Line 2 - Value of c is ", c )
+
+c *= a
+print ("Line 3 - Value of c is ", c )
+
+c /= a 
+print ("Line 4 - Value of c is ", c )
+
+c  = 2
+c %= a
+print ("Line 5 - Value of c is ", c)
+
+c **= a
+print ("Line 6 - Value of c is ", c)
+
+c //= a
+print ("Line 7 - Value of c is ", c)
+
+```
+
+### Decision Making
+Decision-making is the anticipation of conditions occurring during the execution of a program and specified actions taken according to the conditions.
+
+Decision structures evaluate multiple expressions, which produce TRUE or FALSE as the outcome. You need to determine which action to take and which statements to execute if the outcome is TRUE or FALSE otherwise.
+
+Following is the general form of a typical decision making structure found in most of the programming languages −
+
+example IF Statement
+``` python
+var1 = 100
+if var1:
+   print ("1 - Got a true expression value")
+   print (var1)
+
+var2 = 0
+if var2:
+   print ("2 - Got a true expression value")
+   print (var2)
+print ("Good bye!")
+```
+example if else statement
+
+```python
+
+amount = int(input("Enter amount: "))
+
+if amount<1000:
+   discount = amount*0.05
+   print ("Discount",discount)
+else:
+   discount = amount*0.10
+   print ("Discount",discount)
+    
+print ("Net payable:",amount-discount)
+
+```
+
+Example elif statement: 
+
+```
+#!/usr/bin/python3
+
+amount = int(input("Enter amount: "))
+
+if amount<1000:
+   discount = amount*0.05
+   print ("Discount",discount)
+elif amount<5000:
+   discount = amount*0.10
+   print ("Discount",discount)
+else:
+   discount = amount*0.15
+   print ("Discount",discount)
+    
+print ("Net payable:",amount-discount)
+```
+
+## Loops
+
+### While loops 
+
+While example
+```
+count = 0
+while (count < 9):
+   print ('The count is:', count)
+   count = count + 1
+
+print ("Good bye!")
+```
+
+### while infinite
+``` python
+var = 1
+while var == 1 :  # This constructs an infinite loop
+   num = int(input("Enter a number  :"))
+   print ("You entered: ", num)
+
+print ("Good bye!")
+```
+
+### For loops
+for using numbers:
+``` python
+for var in range(5):
+   print (var)
+```
+For using lists or strings
+
+```python
+for letter in 'Python':     # traversal of a string sequence
+   print ('Current Letter :', letter)
+print()
+fruits = ['banana', 'apple',  'mango']
+
+for fruit in fruits:        # traversal of List sequence
+   print ('Current fruit :', fruit)
+
+print ("Good bye!")
+```
+
+or using index (but why???)
+
+``` python
+#!/usr/bin/python3
+
+fruits = ['banana', 'apple',  'mango']
+for index in range(len(fruits)):
+   print ('Current fruit :', fruits[index])
+
+print ("Good bye!")
+```
+
+### Controls inside a loop
+
+BREAK statemeant:
+``` python
+no = int(input('any number: '))
+numbers = [11,33,55,39,55,75,37,21,23,41,13]
+
+for num in numbers:
+   if num == no:
+      print ('number found in list')
+      break
+else:
+   print ('number not found in list')
+```
+
+Continue statment:
+```
+for letter in 'Python':     # First Example
+   if letter == 'h':
+      continue
+   print ('Current Letter :', letter)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
