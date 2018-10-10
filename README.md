@@ -148,8 +148,10 @@ python <filename>
 there are word you cant use, I always recomend read the documentation
 
 ![ reserverd words](https://cdn-images-1.medium.com/max/1200/1*TjYrRbTtdGArQwBywBJHgg.png)
-It can be found at here(https://docs.python.org/3/library/functions.html#built-in-funcs)
-indentation lines
+
+It can be found at [here](https://docs.python.org/3/library/functions.html#built-in-funcs)
+
+### indentation lines
 ``` python
 #!/usr/bin/python3
 
@@ -197,6 +199,7 @@ You can let comments on your code. this will permit to left some notes or docume
  you might want to explain somehtin  sinces it will happend something 
  
  a) left unseen a code along time
+ 
  b) some one else required to read your code
  
 ``` python
